@@ -74,6 +74,4 @@ jobs:
 
       - name: Test
         run: | 
-          docker run -it --rm \
-          -v $GITHUB_WORKSPACE:/host \
-          ${{ secrets.DOCKERHUB_USERNAME_A }}/${{ env.D_TAG }}
+          docker run --rm ${{ secrets.DOCKERHUB_USERNAME_A }}/${{ env.D_TAG }}
