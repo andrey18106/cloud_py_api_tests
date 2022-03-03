@@ -2,7 +2,11 @@
 
 ECHO_LINE_BREAK="echo -----------------------------------------------------"
 
-service "$DB_TYPE" start || exit 1
+if [ "$DB_TYPE" = "pgsql" ]; then \
+    service postgresql start || exit 1;
+elif [ "$DB_TYPE" = "mysql" ]; then \
+    service mysql start || exit 1;
+fi
 
 $ECHO_LINE_BREAK
 echo "PHP INTEGRATION TESTS START"
