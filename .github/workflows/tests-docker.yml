@@ -73,5 +73,5 @@ jobs:
             DB_TYPE=${{ matrix.db }}
 
       - name: Test
-        run: | 
+        run: |
           docker run --rm ${{ secrets.DOCKERHUB_USERNAME_A }}/${{ env.D_TAG }}
